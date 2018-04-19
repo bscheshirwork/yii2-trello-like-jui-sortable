@@ -1,7 +1,7 @@
 {
     "name":"bscheshirwork/yii2-trello-like-jui-sortable",
     "description":"Board to move portlet from column to column",
-    "keywords":["trello-like", "drag&drop", "Yii2"],
+    "keywords":["trello-like", "drag-and-drop", "Yii2"],
     "type":"library",
     "license":"MIT",
     "authors":[
