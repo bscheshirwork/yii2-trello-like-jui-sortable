@@ -1,0 +1,30 @@
+{
+    "name":"bscheshirwork/yii2-trello-like-jui-sortable",
+    "description":"Board to move portlet from column to column",
+    "keywords":["trello-like", "drag&drop", "Yii2"],
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"BSCheshir",
+            "email":"bscheshir.work@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "bscheshirwork\\tljs\\": "src\\"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "yiisoft/yii2": "~2.0.15@dev",
+        "yiisoft/yii2-jui": "^2.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+# Local run unit tests
+# for docker-compose CLI like this manual https://github.com/bscheshirwork/yii2-cubs/blob/master/docs/tests.md
+# run directly:
+# docker-compose -f ./tests/docker-compose.yml run --rm --entrypoint bash php
+# and run `composer install` before first time use
+version: '2'
+services:
+  php:
+    image: bscheshir/codeception:php7.2.4-fpm-alpine-yii2 #contain phpunit
+    volumes:
+      - ..:/var/www/html #src and tests shared to container
+      - ~/.composer/cache:/root/.composer/cache
+    environment:
+      TZ: Europe/Moscow
+      XDEBUG_CONFIG: "remote_host=dev-Aspire-V3-772 remote_port=9002 remote_enable=On"
+      PHP_IDE_CONFIG: "serverName=codeception"
+# example for pgsql
+# also add ./tests/data/config.local.php
+# <?php
+# $config['databases']['pgsql']['dsn'] = 'pgsql:host=pgsql;port=5432;dbname=yiitest';
+# $config['databases']['pgsql']['username'] = 'postgres';
+# $config['databases']['pgsql']['password'] = 'postgres';
+#
+# Add to end of this file new service and set depends_on it
+#    depends_on:
+#      - pgsql
+#  pgsql:
+#    image: postgres:10.3
+#    environment:
+#      TZ: Europe/Moscow
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: yiitest
+#      POSTGRES_USER: postgres
