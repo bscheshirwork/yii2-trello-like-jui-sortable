@@ -28,7 +28,7 @@ Add to `index-drag-and-drop` view file (`views/board/index-drag-and-drop`) your 
     <div class="column" id="column<?= $columnModel->id ?>">
         <div class="column-header"><?= $columnModel->name ?></div>
         <?php foreach (array_key_exists($columnModel->id, $dataProviders) ? $dataProviders[$columnModel->id]->models ?? [] : [] as $model):?>
-        <div class="portlet" id="item<?= $model->id ?>>
+        <div class="portlet" id="item<?= $model->id ?>">
             <div class="portlet-header"><?=$model->name?></div>
             <div class="portlet-content"><?=$model->description?></div>
         </div>
